@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .container .item {
+    border: 2px dashed black;
+  }
+
+  .button{
+    background-color: blueviolet;
+    color: aquamarine;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button.warning{
+    background-color: red;
+  }
+
+  .button.active { 
+    background-color: blue;
+  }
+
+   /* แก้ทุกตัวที่ติด item1 */
+  .item1 + .item2{
+    background-color: aquamarine;
+
+  }
+
+  input[type="text"] {
+    border: solid black;
+    margin-bottom: 2em;
+  }
+
+  .button{
+    background-color: cadetblue
+  
+  }
+  
+  .button:hover { 
+    background-color: green;
+  }
+
+  .button:active { 
+    background-color: red;
+  }
+
+  .button:focus {
+    border-color: rgb(34, 171, 38);
+  }
+
+  input:focus{
+    border-col  or: rgb(20, 215, 91);
+  }
+
+  
+
+</style>
+<body>
+
+  <div class="container"> 
+    container content 
+    <div class="item">
+      item content
+    </div>
+  </div>
+
+  <div class="footer-container"> 
+    container content 
+    <div class="item">
+      item content
+    </div>
+  </div>
+
+  <button class="button"> Click Me </button>
+  <button class="button active"> Delete</button>
+  <button class="button warning"> warning</button>
+
+  <div class="item1">Item 1 </div>
+  <div 
+    class="item2">
+    <div> Item 2</div>
+    <div> Item 2</div>
+    <div> Item 2 </div>
+  </div> <br>
+
+  <input type="text" name="s">
+  <input type="text" name="s"><br>
+  
+  <!-- Hover active -->
+  <button class="button"> Click ME </button><br>
+
+  <input type="text">
+</body>
+
+</html>
