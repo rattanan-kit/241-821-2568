@@ -78,6 +78,112 @@
 // }   
 
 
-for (let i = 1; i <= 5; i++) {
-    console.log("For:", i);
-}   
+// for (let i = 1; i <= 5; i++) {
+//     console.log("For:", i);
+// }   
+
+
+// let student =  [{
+//     age: 20,
+//     name: "emma",
+//     grade: "A"
+// } ,{
+//     age: 22,
+//     name: "olivia",
+//     grade: "B"
+
+// }]
+
+// console.log(student);
+
+
+// Function
+    // function calculate_grade(score) {
+    //     if (score >= 80) {
+    //         return "A";
+    //     }
+    //     else if (score >= 70) {
+    //         return "B";
+    //     }
+    //     else if (score >= 60) {
+    //         return "C";
+    //     }
+    //     else if (score >= 50){
+    //         return 'd';
+    //     }
+    //     else {
+    //         return "F";
+    //     }
+    // }
+
+    // console.log("student grade is ",calculate_grade());  
+
+
+// array and loop
+    // let score = [10,20,30,40,50];
+    // score = score.map((s) => {
+    //     return s * 2;        
+    // })
+
+    // for (let i  =  0; i< score.length; i++) {
+    //     console.log(`score at index ${i} is ${score[i]}`); 
+    // }
+
+    // score.forEach((s) => {
+    //     console.log("score is ", s);
+    // })
+
+// let score = [10,20,30,40,50]
+
+// // for(let index = 0; index < score.length; index++) {
+// //     console.log('score :',score[index])
+// // }
+
+// let newScore = score.filter((s) => {
+//     return s >= 30
+// })
+
+// })
+// newScore.forEach((ns) => {
+//     console.log(`newScore : ${ns}`)
+
+
+// console.log("newScore :",newScore)
+
+
+let student = [
+    {
+        name: 'aa',
+        score: '50',
+        grade: 'A'
+    },{
+        name: 'bb',
+        score: '60',
+        grade: 'B'
+    }
+
+]
+
+console.log(student[0])
+
+let students = student.find((s) => {
+    if (s.name == 'bb'){    
+        return true
+    }
+})
+
+let doubleScore_student = student.map((s) => {
+    s.score = s.score * 2
+    return s
+})
+
+console.log(doubleScore_student)
+
+
+let highscore = student.filter((s) => {
+    if (s.score >= 110) {
+        return true
+    }
+})
+
+console.log("high score",highscore)
