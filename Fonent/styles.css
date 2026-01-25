@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Sarabun:wght@400;600&display=swap');
+
+:root {
+    --neon-green: #00ff41; /* สีเขียว Matrix */
+    --neon-bg: #0a0a0a;
+    --grid-color: rgba(0, 255, 65, 0.05);
+}
+
+body {
+    font-family: 'Fira Code', 'Sarabun', monospace;
+    background-color: var(--neon-bg);
+    /* พื้นหลังลายตาราง Grid แบบล้ำๆ */
+    background-image: 
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: var(--neon-green);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    background: rgba(10, 10, 10, 0.9);
+    padding: 40px;
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0, 255, 65, 0.2), inset 0 0 10px rgba(0, 255, 65, 0.1);
+    width: 100%;
+    max-width: 450px;
+    position: relative;
+    /* ตัดมุมแบบ Sci-fi */
+    clip-path: polygon(0% 5%, 5% 0%, 100% 0%, 100% 95%, 95% 100%, 0% 100%);
+}
+
+.header {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--neon-green);
+    padding-bottom: 10px;
+}
+
+.header::before {
+    content: "> "; /* สัญลักษณ์ Command Line */
+}
+
+.header-form {
+    font-size: 12px;
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+/* Input ที่เหมือนหน้าจอพิมพ์คำสั่ง */
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 255, 65, 0.05);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+    border-radius: 0;
+    color: var(--neon-green);
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 10px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+    background: rgba(0, 255, 65, 0.1);
+}
+
+/* ปรับแต่ง Radio & Checkbox ให้เป็นแบบ Digital */
+input[type="radio"], input[type="checkbox"] {
+    accent-color: var(--neon-green);
+    filter: drop-shadow(0 0 5px var(--neon-green));
+}
+
+/* ปุ่ม Scan/Submit */
+.button {
+    background: transparent;
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
+    padding: 20px;
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: var(--neon-green);
+    color: black;
+    box-shadow: 0 0 30px var(--neon-green);
+}
+
+/* เอฟเฟกต์เส้นสแกน (Scanline) วิ่งผ่านหน้าจอ */
+.container::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 2px;
+    background: rgba(0, 255, 65, 0.2);
+    animation: scan 3s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { top: 0%; }
+    100% { top: 100%; }
+}
