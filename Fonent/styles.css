@@ -107,7 +107,8 @@ input[type="radio"], input[type="checkbox"] {
     box-shadow: 0 0 30px var(--neon-green);
 }
 
-/* เอฟเฟกต์เส้นสแกน (Scanline) วิ่งผ่านหน้าจอ */
+/* เอฟเฟกต์เส้นสแกน (Scanline) วิ่งผ่านหน้าจ
+อ */
 .container::after {
     content: "";
     position: absolute;

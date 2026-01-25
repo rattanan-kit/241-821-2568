@@ -13,6 +13,7 @@ function submitData () {
       interest += ','
     }
   }
+  
 
   let userData = {
     firstName: firstNameDOM.value,
