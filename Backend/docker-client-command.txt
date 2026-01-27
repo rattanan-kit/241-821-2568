@@ -1,0 +1,8 @@
+node -v
+npm -v
+
+docker run 
+docker start
+docker stop
+docker rm 
+docker ps --all
