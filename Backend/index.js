@@ -19,6 +19,31 @@ const initDBConnection = async () => {
     });
 }
 
+
+app.put('/users/:id', async (req, res) => {
+    try {
+        let id = req.params.id;
+        let user = req.body;
+        const result = await conn.query('UPDATE users SET ? WHERE id = ?', [user, id]);
+        if (result[0].affectedRows == 0) {
+            throw {statusCode: 404, message: 'User not found'};
+        }
+        res.json({
+            message: 'User updated successfully',
+            data: user
+        });
+    } catch (error) {
+        console.error('Error',error);
+        let statusCode = error.statusCode || 500;
+        res.status(statusCode).json({
+            message: 'Error updating user',
+            error: error
+        });
+    }
+}); 
+
+
+
 // path = Get / Users สำหรับ get ข้่อมูล user ทั้งหมด
 app.get('/users', async (req, res) => {
     const result = await conn.query('SELECT * FROM users');
@@ -42,8 +67,34 @@ app.get('/users', (req, res) => {
 });
 
 
+
+
+app.delete('/users/:id', async (req, res) => {
+    try{
+        let id = req.params.id;
+        let user = req.body;
+        const result = await conn.query('DELETE FROM users WHERE id = ?',id);
+        if (result[0].length == 0) {
+            throw {statusCode: 404,message: 'User not found'}
+        }
+        res.json({
+            message: 'User delete success',
+            
+        })
+    }
+    catch (error) {
+        console.error('Error',error);
+        let statusCode = error.statusCode || 500;
+        res.status(500).json({
+            message: 'Error getting user',
+            error: error
+        });
+    }
+});
+
 // path = POST /users สำหรับเพิ่ม user ใหม่
 app.post('/users', async (req, res) => {
+    try {
     let user = req.body;
     const result = await conn.query('INSERT INTO users SET ?', user);
     console.log('result',result)
@@ -51,9 +102,35 @@ app.post('/users', async (req, res) => {
         message: 'User added successfully',
         data: result[0]
     });
+
+    } catch (error) {
+        console.error('Error',error);
+        res.status(500).json({
+            message: 'Error adding user',
+            error: error
+        });
+    }
 })
 
 
+app.get('/user/:id', async (req, res) => {
+    try{
+        let id = req.params.id;
+        const result = await conn.query('SELECT * FROM users WHERE id = ?', id);
+        if (result[0].length == 0) {
+            throw {statusCode: 404, message: 'User not found'};
+        }
+        res.json(result[0][0]);
+    }
+    catch (error) {
+        console.error('Error',error);
+        let statusCode = error.statusCode || 500;
+        res.status(500).json({
+            message: 'Error getting user',
+            error: error
+        });
+    }
+});
 
 
 
