@@ -122,3 +122,18 @@ input[type="radio"], input[type="checkbox"] {
     0% { top: 0%; }
     100% { top: 100%; }
 }
+
+.message{
+
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+.message.success {
+    background-color: #4CAF50; /* สีเขียวสำหรับข้อความสำเร็จ */
+    color: white;
+}
+.message.danger {
+    background-color: #f44336; /* สีแดงสำหรับข้อความผิดพลาด */
+    color: white;
+}
