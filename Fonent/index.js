@@ -29,14 +29,14 @@ const submitData = async () => {
   console.log('response', response);
   messageDOM.innerText = 'บันทึกข้อมูลสำเร็จ'
   messageDOM.className = 'message success'
-  console.log('submitData', userData);
-
-  } catch (error) {
-    if (error.response) {
-      console.error('Error response', error.response.data.message);
-    }
-    messageDOM.innerText = 'เกิดข้อผิดพลาด:'
-    messageDOM.className = 'message danger'
-  }
   
+} catch (error) {
+  if (error.response) {
+    console.error('Error response', error.response.data.message);
+  }
+  messageDOM.innerText = 'เกิดข้อผิดพลาด:'
+  messageDOM.className = 'message danger'
+}
+console.log('submitData', userData);
+
 }
