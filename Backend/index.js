@@ -136,7 +136,7 @@ app.get('/user/:id', async (req, res) => {
         let id = req.params.id;
         const result = await conn.query('SELECT * FROM users WHERE id = ?', id);
         if (result[0].length == 0) {
-            throw {statusCode: 404, message: 'User not found'};
+            throw {statusCode: 404, message: 'User not found'}; 
         }
         res.json(result[0][0]);
     }
@@ -149,8 +149,6 @@ app.get('/user/:id', async (req, res) => {
         });
     }
 });
-
-
 
 
 

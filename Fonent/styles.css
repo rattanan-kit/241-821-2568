@@ -63,7 +63,7 @@ textarea {
     width: 100%;
     padding: 12px;
     background: rgba(0, 255, 65, 0.05);
-    border: 1px solid rgba(0, 255, 65, 0.3);
+    border: 1px dashed rgba(0, 255, 65, 0.3);
     border-radius: 0;
     color: var(--neon-green);
     font-family: 'Fira Code', monospace;
@@ -74,8 +74,8 @@ textarea {
 
 input:focus, textarea:focus {
     border-color: var(--neon-green);
-    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
-    background: rgba(0, 255, 65, 0.1);
+    box-shadow: 0 0 15px rgba(235, 2, 72, 0.4);
+    background: rgba(230, 138, 2, 0.1);
 }
 
 /* ปรับแต่ง Radio & Checkbox ให้เป็นแบบ Digital */
